@@ -55,6 +55,6 @@ or
 
 python train.py --fold 0 --model decision_tree_entropy
 ```
-This will train the model and dmp the trained model in models directory for each fold.
+This will train the model and dump the trained model in models directory for each fold.
 
-if you want to add any other model, al you need to define that model in model_dispatch.py as key value pair and provide the model name while running train.py in command line.
+if you want to add any other model, all you need to define that model in model_dispatch.py as key value pair and provide the model name while running train.py in command line.
