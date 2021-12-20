@@ -14,12 +14,12 @@ def create_folds(df, n_folds):
 
     folds = model_selection.StratifiedKFold(n_splits=n_folds, shuffle=True, random_state=42)
     for fold_n, (train_idx, val_idx) in enumerate(folds.split(X=df, y=df.label)):
-        # print("Fold {}".format(fold_n))
-        # print("Train indices: {}".format(train_idx))
-        # print("Val indices: {}".format(val_idx))
+        print("Fold {}".format(fold_n))
+        print("Train indices: {}".format(train_idx))
+        print("Val indices: {}".format(val_idx))
         df.loc[val_idx, 'kfold'] = fold_n
         
-        return df
+    return df
 
 if __name__=='__main__':
     df = pd.read_csv(config.train_file_path)
