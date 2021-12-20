@@ -46,8 +46,15 @@ python create_folds.py
 ```
 after applying the StratifiedKFold new dataset will be saved as train_folds.csv. it’s the same as train.csv. The only differences are that this CSV is shuffled and has a new column called kfold. 
 
-to train the model and sav it in models directory ru the below command:
+to train the model and save it in models directory run the below command:
+
 ```
-python train.py
+python train.py --fold 0 --model decision_tree_gini
+
+or
+
+python train.py --fold 0 --model decision_tree_entropy
 ```
 This will train the model and dmp the trained model in models directory for each fold.
+
+if you want to add any other model, al you need to define that model in model_dispatch.py as key value pair and provide the model name while running train.py in command line.
