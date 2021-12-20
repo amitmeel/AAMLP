@@ -1,0 +1,1 @@
+We will build a model to classify MNIST dataset.
