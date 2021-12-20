@@ -1,4 +1,5 @@
 import joblib
+import os
 import pandas as pd
 from sklearn import metrics
 from sklearn import tree
@@ -30,7 +31,10 @@ def run(fold):
     accuracy = metrics.accuracy_score(y_valid, preds)
     print(f"Fold={fold}, Accuracy={accuracy}")
     # save the model
-    joblib.dump(clf, f"../models/dt_{fold}.bin")
+    joblib.dump(
+    clf,
+    os.path.join(config.MODEL_OUTPUT, f"dt_{fold}.bin")
+    )
 
 if __name__ == "__main__":
     run(fold=0)
